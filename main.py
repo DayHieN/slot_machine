@@ -1,13 +1,22 @@
-from classes import *
+from slot import Slot, Options
+from account_management import *
 
 
-
-def play_slot():
+def create_account():
     new_account_name = input("Hi! Welcome to Slot Machine. Enter your name:\n")
     new_account = Account(new_account_name)
     new_account.show_account_info()
-    slot = Slot(1)
-    options = Options(new_account, slot)
-    options.console_options()
+    return new_account
 
-play_slot()
+
+def play_slot(acc, slot):
+
+    options = Options(acc, slot)
+    while True:
+        options.console_options()
+
+
+if __name__ == "__main__":
+    acc = create_account()
+    slot = Slot(2, acc)
+    play_slot(acc, slot)
