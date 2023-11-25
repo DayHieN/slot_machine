@@ -12,27 +12,6 @@ class InvalidAmountException(Exception):
     pass
 
 
-class Options:
-
-    def __init__(self, acc, slot):
-        self.options = {
-
-            '1': slot.bet,
-            '2': acc.show_account_info,
-            '3': exit
-
-        }
-
-    def console_options(self):
-        print("Options:\n 1. Play\n 2. Show account info\n 3. Exit")
-        choice = input("Enter your choice:\n")
-        selected_option = self.options.get(choice)
-        if selected_option:
-            selected_option()
-        else:
-            print("Invalid choice. Please, enter a valid option.")
-
-
 class Slot:
     def __init__(self, lines, acc):
         self.account = acc
@@ -265,17 +244,28 @@ class Slot:
 
     def roll(self):
 
-        self.S1_1 = random.choice(self.slots)
-        self.S1_2 = random.choice(self.slots)
-        self.S1_3 = random.choice(self.slots)
-        self.S2_1 = random.choice(self.slots)
-        self.S2_2 = random.choice(self.slots)
-        self.S2_3 = random.choice(self.slots)
-        self.S3_1 = random.choice(self.slots)
-        self.S3_2 = random.choice(self.slots)
-        self.S3_3 = random.choice(self.slots)
-        print(f"\n( {self.S1_1} | {self.S1_2} | {self.S1_3} )\n( {self.S2_1} | {self.S2_2} | {self.S2_3} )\n( {self.S3_1} | {self.S3_2} | {self.S3_3} )\n")
+        for i in range(1, random.randint(30, 75)):
+            self.S1_1 = random.choice(self.slots)
+            self.S1_2 = random.choice(self.slots)
+            self.S1_3 = random.choice(self.slots)
+            self.S2_1 = random.choice(self.slots)
+            self.S2_2 = random.choice(self.slots)
+            self.S2_3 = random.choice(self.slots)
+            self.S3_1 = random.choice(self.slots)
+            self.S3_2 = random.choice(self.slots)
+            self.S3_3 = random.choice(self.slots)
+
+            line_1 = f"\n( {self.S1_1} | {self.S1_2} | {self.S1_3} )"
+            line_2 = f"\n( {self.S2_1} | {self.S2_2} | {self.S2_3} )"
+            line_3 = f"\n( {self.S3_1} | {self.S3_2} | {self.S3_3} )\n"
+
+            print(line_1, line_2, line_3, end='\r')
+
+            sleep(i / 100)
+
         self.check_slots()
         self.play_count = self.play_count + 1
+
         print(f"Plays this session: {self.play_count}")
+
         self.account.save_data(self.account)

@@ -21,6 +21,8 @@ class Account:
                 f"Couldn't withdraw ${amount} from your balance. You don't have enough money: ${self.total}"
             )
 
+    
+
     def to_dict(self):
         return {'name': self.name,
                 'total': self.total,

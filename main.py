@@ -1,6 +1,10 @@
-from slot import Slot, Options
+from slot import Slot
+from roulette import Roulette
+from options import Options
+
 from account_management import *
 import json
+
 
 def create_account():
     new_account_name = input("Hi! Welcome to Slot Machine. Enter your name:\n")
@@ -9,16 +13,16 @@ def create_account():
     return new_account
 
 
+def play(acc, slot, roulette):
 
-def play_slot(acc, slot):
-
-    options = Options(acc, slot)
+    options = Options(acc, slot, roulette)
     while True:
         options.console_options()
 
 
 if __name__ == "__main__":
-    
+
     acc = create_account()
     slot = Slot(3, acc)
-    play_slot(acc, slot)
+    roulette = Roulette(acc)
+    play(acc, slot, roulette)
