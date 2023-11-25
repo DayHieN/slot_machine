@@ -39,24 +39,16 @@ class Slot:
         self.betting_amount = 0
         self.winnings = 0
         self.total_winnings = 0
+        self.play_count = 0
         self.lines = lines
-        self.slots = ['7', 'A', 'B', 'C', 'D']
-        self.S1_1 = None
-        self.S1_2 = None
-        self.S1_3 = None
-        self.S2_1 = None
-        self.S2_2 = None
-        self.S2_3 = None
-        self.S3_1 = None
-        self.S3_2 = None
-        self.S3_3 = None
+        self.slots = ['💫', '​🍉​', '🍋​', '🍒', '🍏']
 
     def viable_bet(self, amount):
         if amount <= MAX_AMOUNT and amount >= MIN_AMOUNT:
             return
         else:
             raise InvalidAmountException(
-                f"Can't bet ${amount}. Max bet amount is ${MAX_AMOUNT}. Min bet amount is ${MIN_AMOUNT}"
+                f"C​an't bet ${amount}. Max bet amount is ${MAX_AMOUNT}. Min bet amount is ${MIN_AMOUNT}"
             )
 
     def bet(self):
@@ -72,90 +64,197 @@ class Slot:
     def check_slots(self):
         if self.lines == 1:
             # Middle lane
-            if self.S2_1 == '7' and self.S2_2 == '7' and self.S2_3 == '7':
+            if self.S2_1 == '💫​' and self.S2_2 == '💫​' and self.S2_3 == '💫​':
                 won_amount = self.betting_amount * 10
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S2_1 == 'A' and self.S2_2 == 'A' and self.S2_3 == 'A':
+            if self.S2_1 == '🍉' and self.S2_2 == '🍉' and self.S2_3 == '🍉':
                 won_amount = self.betting_amount * 5
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S2_1 == 'B' and self.S2_2 == 'B' and self.S2_3 == 'B':
+            if self.S2_1 == '🍋​' and self.S2_2 == '🍋​' and self.S2_3 == '🍋​':
                 won_amount = self.betting_amount * 2.5
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S2_1 == 'C' and self.S2_2 == 'C' and self.S2_3 == 'C':
+            if self.S2_1 == '🍒​' and self.S2_2 == '🍒​' and self.S2_3 == '🍒​':
                 won_amount = self.betting_amount * 1.75
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S2_1 == 'D' and self.S2_2 == 'D' and self.S2_3 == 'D':
+            if self.S2_1 == '🍏​' and self.S2_2 == '🍏​' and self.S2_3 == '🍏​':
                 won_amount = self.betting_amount * 1.5
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
         if self.lines == 2:
             # Top line
-            if self.S1_1 == '7' and self.S1_2 == '7' and self.S1_3 == '7':
+            if self.S1_1 == '💫​' and self.S1_2 == '💫​' and self.S1_3 == '💫​':
                 won_amount = self.betting_amount * 10
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S1_1 == 'A' and self.S1_2 == 'A' and self.S1_3 == 'A':
+            if self.S1_1 == '🍉' and self.S1_2 == '🍉' and self.S1_3 == '🍉':
                 won_amount = self.betting_amount * 5
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S1_1 == 'B' and self.S1_2 == 'B' and self.S1_3 == 'B':
+            if self.S1_1 == '🍋​' and self.S1_2 == '🍋​' and self.S1_3 == '🍋​':
                 won_amount = self.betting_amount * 2.5
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S1_1 == 'C' and self.S1_2 == 'C' and self.S1_3 == 'C':
+            if self.S1_1 == '🍒​' and self.S1_2 == '🍒​' and self.S1_3 == '🍒​':
                 won_amount = self.betting_amount * 1.75
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S1_1 == 'D' and self.S1_2 == 'D' and self.S1_3 == 'D':
+            if self.S1_1 == '🍏​' and self.S1_2 == '🍏​' and self.S1_3 == '🍏​':
                 won_amount = self.betting_amount * 1.5
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
             # Middle line
-            if self.S2_1 == '7' and self.S2_2 == '7' and self.S2_3 == '7':
+            if self.S2_1 == '💫​' and self.S2_2 == '💫​' and self.S2_3 == '💫​':
                 won_amount = self.betting_amount * 10
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S2_1 == 'A' and self.S2_2 == 'A' and self.S2_3 == 'A':
+            if self.S2_1 == '🍉' and self.S2_2 == '🍉' and self.S2_3 == '🍉':
                 won_amount = self.betting_amount * 5
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S2_1 == 'B' and self.S2_2 == 'B' and self.S2_3 == 'B':
+            if self.S2_1 == '🍋​' and self.S2_2 == '🍋​' and self.S2_3 == '🍋​':
                 won_amount = self.betting_amount * 2.5
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S2_1 == 'C' and self.S2_2 == 'C' and self.S2_3 == 'C':
+            if self.S2_1 == '🍒​' and self.S2_2 == '🍒​' and self.S2_3 == '🍒​':
                 won_amount = self.betting_amount * 1.75
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S2_1 == 'D' and self.S2_2 == 'D' and self.S2_3 == 'D':
+            if self.S2_1 == '🍏​' and self.S2_2 == '🍏​' and self.S2_3 == '🍏​':
                 won_amount = self.betting_amount * 1.5
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            # Bottom line
-            if self.S3_1 == '7' and self.S3_2 == '7' and self.S3_3 == '7':
+            # B​ottom line
+            if self.S3_1 == '💫​' and self.S3_2 == '💫​' and self.S3_3 == '💫​':
                 won_amount = self.betting_amount * 10
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S3_1 == 'A' and self.S3_2 == 'A' and self.S3_3 == 'A':
+            if self.S3_1 == '🍉' and self.S3_2 == '🍉' and self.S3_3 == '🍉':
                 won_amount = self.betting_amount * 5
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S3_1 == 'B' and self.S3_2 == 'B' and self.S3_3 == 'B':
+            if self.S3_1 == '🍋​' and self.S3_2 == '🍋​' and self.S3_3 == '🍋​':
                 won_amount = self.betting_amount * 2.5
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S3_1 == 'C' and self.S3_2 == 'C' and self.S3_3 == 'C':
+            if self.S3_1 == '🍒​' and self.S3_2 == '🍒​' and self.S3_3 == '🍒​':
                 won_amount = self.betting_amount * 1.75
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
-            if self.S3_1 == 'D' and self.S3_2 == 'D' and self.S3_3 == 'D':
+            if self.S3_1 == '🍏​' and self.S3_2 == '🍏​' and self.S3_3 == '🍏​':
                 won_amount = self.betting_amount * 1.5
                 self.winnings = self.winnings + won_amount
                 print(f"You won ${won_amount}!")
+        if self.lines == 3:
+            # Top line
+            if self.S1_1 == '💫​' and self.S1_2 == '💫​' and self.S1_3 == '💫​':
+                won_amount = self.betting_amount * 10
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S1_1 == '🍉' and self.S1_2 == '🍉' and self.S1_3 == '🍉':
+                won_amount = self.betting_amount * 5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S1_1 == '🍋​' and self.S1_2 == '🍋​' and self.S1_3 == '🍋​':
+                won_amount = self.betting_amount * 2.5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S1_1 == '🍒​' and self.S1_2 == '🍒​' and self.S1_3 == '🍒​':
+                won_amount = self.betting_amount * 1.75
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S1_1 == '🍏​' and self.S1_2 == '🍏​' and self.S1_3 == '🍏​':
+                won_amount = self.betting_amount * 1.5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            # Middle line
+            if self.S2_1 == '💫​' and self.S2_2 == '💫​' and self.S2_3 == '💫​':
+                won_amount = self.betting_amount * 10
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S2_1 == '🍉' and self.S2_2 == '🍉' and self.S2_3 == '🍉':
+                won_amount = self.betting_amount * 5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S2_1 == '🍋​' and self.S2_2 == '🍋​' and self.S2_3 == '🍋​':
+                won_amount = self.betting_amount * 2.5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S2_1 == '🍒​' and self.S2_2 == '🍒​' and self.S2_3 == '🍒​':
+                won_amount = self.betting_amount * 1.75
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S2_1 == '🍏​' and self.S2_2 == '🍏​' and self.S2_3 == '🍏​':
+                won_amount = self.betting_amount * 1.5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            # B​ottom line
+            if self.S3_1 == '💫​' and self.S3_2 == '💫​' and self.S3_3 == '💫​':
+                won_amount = self.betting_amount * 10
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S3_1 == '🍉' and self.S3_2 == '🍉' and self.S3_3 == '🍉':
+                won_amount = self.betting_amount * 5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S3_1 == '🍋​' and self.S3_2 == '🍋​' and self.S3_3 == '🍋​':
+                won_amount = self.betting_amount * 2.5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S3_1 == '🍒​' and self.S3_2 == '🍒​' and self.S3_3 == '🍒​':
+                won_amount = self.betting_amount * 1.75
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S3_1 == '🍏​' and self.S3_2 == '🍏​' and self.S3_3 == '🍏​':
+                won_amount = self.betting_amount * 1.5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            # D​iagonal line 1
+            if self.S1_1 == '💫​' and self.S2_2 == '💫​' and self.S3_3 == '💫​':
+                won_amount = self.betting_amount * 10
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S1_1 == '🍉' and self.S2_2 == '🍉' and self.S3_3 == '🍉':
+                won_amount = self.betting_amount * 5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S1_1 == '🍋​' and self.S2_2 == '🍋​' and self.S3_3 == '🍋​':
+                won_amount = self.betting_amount * 2.5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S1_1 == '🍒​' and self.S2_2 == '🍒​' and self.S3_3 == '🍒​':
+                won_amount = self.betting_amount * 1.75
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S1_1 == '🍏​' and self.S2_2 == '🍏​' and self.S3_3 == '🍏​':
+                won_amount = self.betting_amount * 1.5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            # D​iagonal line 2
+            if self.S3_1 == '💫​' and self.S2_2 == '💫​' and self.S1_3 == '💫​':
+                won_amount = self.betting_amount * 10
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S3_1 == '🍉' and self.S2_2 == '🍉' and self.S1_3 == '🍉':
+                won_amount = self.betting_amount * 5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S3_1 == '🍋​' and self.S2_2 == '🍋​' and self.S1_3 == '🍋​':
+                won_amount = self.betting_amount * 2.5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S3_1 == '🍒​' and self.S2_2 == '🍒​' and self.S1_3 == '🍒​':
+                won_amount = self.betting_amount * 1.75
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+            if self.S3_1 == '🍏​' and self.S2_2 == '🍏​' and self.S1_3 == '🍏​':
+                won_amount = self.betting_amount * 1.5
+                self.winnings = self.winnings + won_amount
+                print(f"You won ${won_amount}!")
+
         self.total_winnings = self.total_winnings + self.winnings
         if self.winnings:
             self.account.deposit_winnings(self.winnings)
@@ -177,5 +276,6 @@ class Slot:
         self.S3_3 = random.choice(self.slots)
         print(f"\n( {self.S1_1} | {self.S1_2} | {self.S1_3} )\n( {self.S2_1} | {self.S2_2} | {self.S2_3} )\n( {self.S3_1} | {self.S3_2} | {self.S3_3} )\n")
         self.check_slots()
-        self.total_plays = self.total_plays + 1
-        print(f"Plays this session: {self.total_plays}")
+        self.play_count = self.play_count + 1
+        print(f"Plays this session: {self.play_count}")
+        self.account.save_data(self.account)

@@ -1,3 +1,4 @@
+import json
 
 
 class InvalidAmountException(Exception):
@@ -19,6 +20,23 @@ class Account:
             raise InvalidAmountException(
                 f"Couldn't withdraw ${amount} from your balance. You don't have enough money: ${self.total}"
             )
+
+    def to_dict(self):
+        return {'name': self.name,
+                'total': self.total,
+                'total_winnings': self.total_winnings,
+                'total_loses': self.total_loses,
+                'profit': self.profit
+                }
+
+    def save_data(self, acc):
+        account = acc.to_dict()
+        with open(f'save_data_{self.name}.json', 'w') as file:
+            json.dump(account, file)
+
+    @classmethod
+    def from_dict(cls, data):
+        return cls(data['name'], data['total'], data['total_winnings'], data['total_loses'], data['profit'])
 
     def deposit(self):
         amount = int(input("Please, enter an amount to deposit:\n"))
