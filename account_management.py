@@ -60,4 +60,4 @@ class Account:
             print(f"Error: {err}")
 
     def show_account_info(self):
-        print(f"{self.name} account.\n Balance: ${self.total}\n Total winnings: ${self.total_winnings}\n Total loses: ${self.total_loses}\n Profit: ${self.profit}")
+        print(f"\n{self.name} account.\n Balance: ${self.total}\n Total winnings: ${self.total_winnings}\n Total loses: ${self.total_loses}\n Profit: ${self.profit}\n")

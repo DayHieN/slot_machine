@@ -16,7 +16,7 @@ class Options:
 
     def console_options(self):
         print(
-            "Options:\n 1. Play slots\n 2. Play roulette\n 3. Show account info\n 4. Exit")
+            "\nOptions:\n 1. Play slots\n 2. Play roulette\n 3. Show account info\n 4. Exit")
         choice = input("Enter your choice:\n")
         selected_option = self.options.get(choice)
         if selected_option:

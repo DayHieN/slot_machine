@@ -1,7 +1,7 @@
 from time import sleep
 import random
 from account_management import Account
-
+import os
 
 MIN_AMOUNT = 1
 
@@ -43,27 +43,26 @@ class Roulette:
         if choosen_number == number:
             self.winnings = self.betting_amount * 35
             print(f"You won ${self.winnings}!")
-        
+
         if self.winnings:
             self.total_winnings = self.total_winnings + self.winnings
             self.account.deposit_winnings(self.winnings)
             print(f"Total winnings this session: ${self.total_winnings}")
             self.winnings = 0
         else:
-            print("Sorry. Better luck next time!")
-
+            print("\nSorry. Better luck next time!")
 
     def roll(self):
-        choosen_number = input("Please, choose your number:\n")
-        random_number = random.randint(50, 75)
-        for i in range(1, random_number):
-            number = random.randint(0, 36)
-            if i == random_number:
-                print(f"    {number} {self.numbers.get(number)}\n")
-            else:
-                print(f"\r    {number} {self.numbers.get(number)}", end='')
-            sleep(i / 150)
-            
-        self.check(choosen_number, number)
+        choosen_number = int(input("Please, choose your number (0 to 36):\n"))
+        if choosen_number >= 0 and choosen_number <= 36:
+            random_number = random.randint(50, 75)
+            for i in range(1, random_number):
+                number = random.randint(0, 36)
 
+                print(f"    {number} {self.numbers.get(number)}", end='\r')
 
+                sleep(i / 150)
+
+            self.check(choosen_number, number)
+        else:
+            print("")

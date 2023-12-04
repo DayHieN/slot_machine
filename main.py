@@ -23,6 +23,6 @@ def play(acc, slot, roulette):
 if __name__ == "__main__":
 
     acc = create_account()
-    slot = Slot(3, acc)
+    slot = Slot(acc)
     roulette = Roulette(acc)
     play(acc, slot, roulette)
