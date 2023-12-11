@@ -94,7 +94,7 @@ class Notifications:
     @classmethod
     def success_notification1(cls):
 
-        print('Success!')
+        
 
         winsound.Beep(notes['do2'], 100)
         winsound.Beep(notes['mi2'], 100)
@@ -106,7 +106,7 @@ class Notifications:
     @classmethod
     def success_notification2(cls):
 
-        print('Success!')
+        
 
         winsound.Beep(notes['mi3'], 100)
         winsound.Beep(notes['re3'], 200)
@@ -119,7 +119,7 @@ class Notifications:
     @classmethod
     def something_went_wrong(cls):
 
-        print('Something went wrong!')
+        
 
         winsound.Beep(notes['re2'], 300)
         winsound.Beep(notes['sol1#'], 500)
